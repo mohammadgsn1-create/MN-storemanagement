@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MN Electronics Admin — Sign in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+
+  <div class="grid-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <!-- circuit paths: straight runs with right-angle turns, like a PCB trace -->
+      <path class="circuit-line charge" style="animation-delay:0s"   d="M0,120 H260 V60 H520 V220 H760" />
+      <path class="circuit-line charge" style="animation-delay:.18s" d="M1200,90 H900 V260 H660 V140 H420" />
+      <path class="circuit-line charge" style="animation-delay:.34s" d="M0,420 H180 V520 H460 V400 H700 V500 H980" />
+      <path class="circuit-line charge" style="animation-delay:.5s"  d="M1200,480 H1020 V360 H760 V480 H540" />
+      <path class="circuit-line charge" style="animation-delay:.66s" d="M0,680 H240 V600 H500 V700 H820" />
+      <path class="circuit-line charge" style="animation-delay:.82s" d="M1200,650 H980 V740 H700 V640 H460" />
+      <path class="circuit-line charge" style="animation-delay:.98s" d="M120,0 V160 H340 V40" />
+      <path class="circuit-line charge" style="animation-delay:1.1s" d="M1080,800 V620 H860 V760" />
+
+      <circle class="circuit-node" style="animation-delay:.05s"  cx="260" cy="120" r="3.2"/>
+      <circle class="circuit-node" style="animation-delay:.23s"  cx="900" cy="90"  r="3.2"/>
+      <circle class="circuit-node" style="animation-delay:.39s"  cx="460" cy="420" r="3.2"/>
+      <circle class="circuit-node" style="animation-delay:.55s"  cx="1020" cy="480" r="3.2"/>
+      <circle class="circuit-node" style="animation-delay:.71s"  cx="500" cy="680" r="3.2"/>
+      <circle class="circuit-node" style="animation-delay:.87s"  cx="700" cy="740" r="3.2"/>
+      <circle class="circuit-node" style="animation-delay:1.03s" cx="340" cy="160" r="3.2"/>
+      <circle class="circuit-node" style="animation-delay:1.15s" cx="860" cy="760" r="3.2"/>
+    </svg>
+  </div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div class="stage">
+
+    <div class="brand">
+      <div class="brand-mark">
+        <span class="power-dot"></span>
+        <span class="brand-name">MN Electronics</span>
+      </div>
+      <span class="brand-sub">Admin Console</span>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <h1>Sign in</h1>
+        <p>Enter your credentials to access the console.</p>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="email">username</label>
+          <div class="field-input">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <input type="email" id="username" name="email" placeholder="username" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="field-input">
+            <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+            <button type="button" class="toggle-vis" id="toggleVis" aria-label="Show password">
+              <svg viewBox="0 0 24 24" id="eyeIcon"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="row-between">
+          <label class="remember">
+            <input type="checkbox" id="remember">
+            Remember me
+          </label>
+          <a href="#" class="forgot">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn-power" id="signInBtn">
+          <svg viewBox="0 0 24 24"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.8 0"/></svg>
+          Sign in
+        </button>
+      </form>
+
+      <div class="divider">Store status</div>
+      <div class="meta-row">
+        <span class="status-dot"></span>
+        <span>ALL SYSTEMS OPERATIONAL — MONDAY, AUGUST 24 2026</span>
+      </div>
+    </div>
+
+    <div class="foot-note">
+      Not an admin? <a href="/front-end/pages/index.html">Go to storefront →</a>
+    </div>
+
+  </div>
+
+  <script type="module" src="../js/auth-form.js"></script>
+  <script  src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

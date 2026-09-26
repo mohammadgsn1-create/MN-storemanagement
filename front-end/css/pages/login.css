@@ -1,0 +1,7 @@
+/* login.html — extra styles beyond css/auth.css (language toggle) */
+
+
+  .login-lang-toggle{
+    position:absolute;top:24px;right:24px;z-index:3;
+  }
+  html[dir="rtl"] .login-lang-toggle{right:auto;left:24px;}

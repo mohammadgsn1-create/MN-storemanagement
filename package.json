@@ -1,0 +1,56 @@
+{
+  "name": "my-electron-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+  "start": "electron .",
+  "dist": "electron-builder"
+},
+  "keywords": [],
+  "type": "commonjs",
+  "dependencies": {
+   
+  },
+  "devDependencies": {
+    "electron-builder": "^26.15.3",
+     "electron": "^44.4.1"
+  },
+  "allowScripts": {
+    "electron-winstaller@5.4.0": true
+  },
+"build": {
+  "appId": "com.mnelectronics.admin",
+  "productName": "MN Electronics Admin",
+  "asar": false,
+  "npmRebuild": false,
+  "files": [
+    "main.js",
+    "package.json",
+    "front-end/**/*",
+    "!backend/**/*",
+    "!php/**/*",
+    "!dist/**/*"
+  ],
+  "extraResources": [
+    {
+      "from": "backend",
+      "to": "backend"
+    },
+    {
+      "from": "php",
+      "to": "php"
+    }
+  ],
+  "win": {
+    "target": "nsis",
+    "signAndEditExecutable": false
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true
+  }
+}
+  }
+

@@ -1,0 +1,191 @@
+/* companies.html — page-specific styles */
+
+/* companies.html — page-specific styles */
+
+body{
+    background:var(--ink);
+    color:var(--ice);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+
+.app{
+    display:grid;
+    grid-template-columns:var(--sidebar-w) 1fr;
+    height:100vh;overflow:hidden;
+    transition:grid-template-columns .22s ease;
+  }
+
+.app.sidebar-collapsed .sidebar{
+    padding-left:0;padding-right:0;
+    border-right:none;
+    opacity:0;
+    pointer-events:none;
+  }
+
+.sidebar-toggle{
+    display:flex;align-items:center;justify-content:center;
+    width:38px;height:38px;flex-shrink:0;
+    background:var(--navy);border:1px solid var(--line);border-radius:var(--radius);
+    color:var(--silver);
+    transition:background .15s ease, color .15s ease;
+  }
+
+.logo{
+    font-family:'Archivo',sans-serif;font-weight:800;font-size:19px;
+    display:flex;align-items:center;gap:8px;
+    padding:4px 8px 28px;
+  }
+
+.logo .sub{
+    font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--steel);
+    font-weight:500;letter-spacing:0.05em;display:block;margin-top:2px;
+  }
+
+.nav-label{
+    font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--steel);
+    text-transform:uppercase;letter-spacing:0.08em;
+    padding:0 10px;margin-bottom:8px;display:block;
+  }
+
+.nav-item{
+    display:flex;align-items:center;gap:12px;
+    padding:10px 10px;border-radius:var(--radius);
+    font-size:14px;font-weight:500;color:var(--silver);
+    margin-bottom:2px;position:relative;
+    transition:background .15s ease, color .15s ease;
+  }
+
+.nav-item.active{background:rgba(61,165,255,0.1);color:var(--ice);}
+
+.nav-item.active::before{
+    content:'';position:absolute;left:-16px;top:50%;transform:translateY(-50%);
+    width:3px;height:18px;background:var(--blue);border-radius:0 3px 3px 0;
+  }
+
+.nav-badge{
+    margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:10px;
+    background:var(--navy-2);color:var(--silver);padding:2px 7px;border-radius:100px;
+  }
+
+.soon{
+    margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:9px;
+    color:var(--steel);border:1px solid var(--line);padding:1px 6px;border-radius:100px;
+  }
+
+.sidebar-foot{
+    margin-top:auto;border-top:1px solid var(--line);padding-top:16px;
+    display:flex;align-items:center;gap:10px;padding-left:8px;
+  }
+
+.avatar{
+    width:32px;height:32px;border-radius:50%;background:var(--blue-dim);
+    display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;
+    color:var(--ice);flex-shrink:0;
+  }
+
+.topbar{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-bottom:28px;flex-wrap:wrap;gap:16px;
+  }
+
+.search{
+    display:flex;align-items:center;gap:10px;
+    background:var(--navy);border:1px solid var(--line);border-radius:var(--radius);
+    padding:10px 14px;min-width:260px;
+  }
+
+.search input{background:none;border:none;color:var(--ice);font-size:13px;width:100%;}
+
+.toolbar{
+    display:flex;justify-content:flex-end;margin-bottom:18px;
+  }
+
+/* ---------- BRAND ROWS ---------- */
+  .panel{background:var(--navy);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+
+th{
+    text-align:left;font-size:11px;color:var(--steel);font-weight:600;
+    text-transform:uppercase;letter-spacing:0.05em;
+    padding:12px 22px;border-bottom:1px solid var(--line);white-space:nowrap;
+  }
+
+td{padding:14px 22px;font-size:13px;border-bottom:1px solid var(--line);vertical-align:middle;}
+
+tbody tr:hover{background:var(--navy-2);}
+
+.brand-cell{display:flex;align-items:center;gap:12px;}
+
+.brand-mark{
+    width:36px;height:36px;border-radius:var(--radius);
+    background:var(--navy-2);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;
+    color:var(--blue);flex-shrink:0;
+  }
+
+.brand-name{font-weight:600;color:var(--ice);}
+
+.brand-id{font-size:11px;color:var(--steel);margin-top:1px;}
+
+.loc-cell{display:flex;align-items:center;gap:6px;color:var(--silver);}
+
+.phone-cell{display:flex;flex-wrap:wrap;gap:6px;}
+
+.phone-pill{
+    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--silver);
+    background:var(--navy-2);padding:3px 9px;border-radius:100px;display:inline-flex;align-items:center;gap:5px;
+  }
+
+.phone-pill svg{width:11px;height:11px;stroke:var(--steel);fill:none;stroke-width:1.8;flex-shrink:0;}
+
+.brand-cell-clickable{cursor:pointer;border-radius:var(--radius);transition:background .15s ease;}
+
+.brand-cell-clickable:hover{background:var(--navy-2);}
+
+.brand-cell-clickable:hover .brand-name{color:var(--blue);}
+
+.product-view-list{display:flex;flex-direction:column;gap:10px;}
+
+.product-view-item{
+    background:var(--ink);border:1px solid var(--line);border-radius:var(--radius);
+    padding:12px 14px;
+  }
+
+.product-view-name{font-size:13.5px;font-weight:600;color:var(--ice);margin-bottom:6px;}
+
+.product-view-meta{
+    display:grid;grid-template-columns:1fr 1fr;gap:4px 14px;
+    font-size:11.5px;color:var(--steel);
+  }
+
+.product-view-meta span{color:var(--silver);}
+
+.product-view-empty{font-size:12.5px;color:var(--steel);text-align:center;padding:20px 0;}
+
+.loc-cell svg{width:13px;height:13px;stroke:var(--steel);fill:none;stroke-width:1.8;flex-shrink:0;}
+
+.stat-num-cell{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;}
+
+.row-actions{display:flex;gap:6px;justify-content:flex-end;}
+
+.icon-btn{
+    width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+    border-radius:var(--radius);color:var(--steel);background:none;border:none;
+    transition:background .15s ease, color .15s ease;
+  }
+
+.icon-btn:hover{background:var(--navy-2);color:var(--ice);}
+
+.icon-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.7;}
+
+@media (max-width:760px){
+    html,body{height:auto;overflow:visible;}
+    .app{grid-template-columns:1fr;height:auto;overflow:visible;}
+    .sidebar{position:relative;height:auto;overflow:visible;flex-direction:row;flex-wrap:wrap;}
+    main{height:auto;overflow:visible;}
+    .nav-group{margin-bottom:0;}
+    .sidebar-foot{display:none;}
+    table{display:block;overflow-x:auto;}
+  }

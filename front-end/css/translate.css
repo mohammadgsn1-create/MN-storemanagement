@@ -1,0 +1,47 @@
+/* ============================================================
+   MN Electronics Admin — shared EN/AR toggle styling + RTL rules
+   Include on every page:  <link rel="stylesheet" href="i18n.css">
+   ============================================================ */
+
+/* ---------- sidebar scrollbar (Chrome/Edge/Safari) ---------- */
+.sidebar::-webkit-scrollbar{width:6px;}
+.sidebar::-webkit-scrollbar-track{background:transparent;}
+.sidebar::-webkit-scrollbar-thumb{background:var(--navy-2);border-radius:100px;}
+.sidebar::-webkit-scrollbar-thumb:hover{background:var(--blue-dim);}
+
+.lang-toggle{
+  display:flex;align-items:center;gap:6px;
+  background:var(--navy);border:1px solid var(--line);border-radius:100px;
+  padding:8px 14px;flex-shrink:0;
+  font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;
+  color:var(--silver);
+  transition:border-color .15s ease, color .15s ease;
+}
+.lang-toggle:hover{border-color:var(--blue-dim);color:var(--ice);}
+.lang-toggle svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:1.7;flex-shrink:0;}
+.lang-toggle .lang-en,.lang-toggle .lang-ar{padding:1px 2px;}
+.lang-toggle[data-current="en"] .lang-en{color:var(--blue);}
+.lang-toggle[data-current="ar"] .lang-ar{color:var(--blue);}
+.lang-toggle .lang-sep{color:var(--steel);}
+
+/* ---------- RTL adjustments ---------- */
+html[dir="rtl"] body{font-family:'Inter','Tahoma',sans-serif;}
+html[dir="rtl"] .nav-item{flex-direction:row-reverse;text-align:right;}
+html[dir="rtl"] .nav-item.active::before{
+  left:auto;right:-16px;border-radius:3px 0 0 3px;
+}
+html[dir="rtl"] .nav-badge{margin-left:0;margin-right:auto;}
+html[dir="rtl"] .sidebar{border-right:none;border-left:1px solid var(--line);}
+html[dir="rtl"] .app.sidebar-collapsed .sidebar{border-left:none;}
+html[dir="rtl"] .sidebar-foot{padding-left:0;padding-right:8px;flex-direction:row-reverse;}
+html[dir="rtl"] .topbar > div:first-child{flex-direction:row-reverse;}
+html[dir="rtl"] .search svg,
+html[dir="rtl"] .pk-search svg{order:1;}
+html[dir="rtl"] .search input,
+html[dir="rtl"] .pk-search input{text-align:right;}
+html[dir="rtl"] .stat-top,
+html[dir="rtl"] .brand-top,
+html[dir="rtl"] .invoice-head,
+html[dir="rtl"] .receipt-head{flex-direction:row-reverse;}
+html[dir="rtl"] th, html[dir="rtl"] td{text-align:right;}
+html[dir="rtl"] .row-actions{justify-content:flex-start;}
